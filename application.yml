@@ -1,3 +1,18 @@
+spring:
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 1000
+          max-attempts: 3
+          max-interval: 10000
+          multiplier: 2.0
+  datasource:
+    driver_class_name: org.postgresql.Driver
+
 hibernate:
   dialect: org.hibernate.dialect.PostgreSQL94Dialect
   format-sql: true
