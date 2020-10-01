@@ -10,6 +10,8 @@ rabbitmq:
       creditCardAuthorizationQueue: credit_card_authorization_queue
 
 service:
+  name:
+    customer-module: customer-service
   host:
     customer-module: http://localhost:8089
   url:
