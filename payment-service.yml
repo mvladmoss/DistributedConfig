@@ -38,3 +38,8 @@ resilience4j:
     instances:
       payment-service:
         baseConfig: default
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
