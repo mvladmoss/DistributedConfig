@@ -26,9 +26,16 @@ spring:
           filters:
             - RewritePath=/customer-service/(?<segment>.*), /$\{segment}
 
-        - id: order-service
+        - id: payment-service
           uri: lb://payment-service
           predicates:
             - Path=/payment-service/**
           filters:
             - RewritePath=/payment-service/(?<segment>.*), /$\{segment}
+
+        - id: log-service
+          uri: http://elasticsearch:9200
+          predicates:
+            - Path=/log-service/**
+          filters:
+            - RewritePath=/log-service/(?<segment>.*), /$\{segment}
