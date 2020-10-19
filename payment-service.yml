@@ -19,6 +19,12 @@ service:
   retry:
     max-attempts: 3
     backoff-in-seconds: 3
+    
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+
 
 resilience4j:
   circuitbreaker:
